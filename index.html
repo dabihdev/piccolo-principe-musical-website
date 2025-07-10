@@ -228,8 +228,13 @@
                style="background-image: url('TUA_IMMAGINE.jpg'); background-position: center top;"
             */
             background-size: cover;
-            background-position: center;
+            background-position: center center;
             background-repeat: no-repeat;
+
+            /* Aggiungi queste proprietà per un rapporto d'aspetto flessibile */
+            position: relative;
+            padding-bottom: 75%; /* Esempio: 4:3 ratio (altezza 75% della larghezza) */
+            height: 0; /* Imposta altezza a 0 per farla dipendere dal padding */
         }
         
         .image-container:hover {
@@ -416,7 +421,7 @@
             }
             
             .image-container {
-                height: 300px; /* Altezza ridotta su mobile */
+                padding-bottom: 75%; /* Altezza ridotta su mobile */
             }
             
             p {
