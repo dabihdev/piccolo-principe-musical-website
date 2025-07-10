@@ -231,11 +231,10 @@
             background-position: center center;
             background-repeat: no-repeat;
 
-            /* Aggiungi queste proprietà per un rapporto d'aspetto flessibile */
-            position: relative;
-            padding-bottom: 75%; /* Esempio: 4:3 ratio (altezza 75% della larghezza) */
-            height: 0; /* Imposta altezza a 0 per farla dipendere dal padding */
-        }
+            /* Imposta un'altezza fissa o un rapporto d'aspetto se non lo hai già */
+            height: 400px; /* Altezza di default */
+            overflow: hidden; /* Assicurati che l'immagine non esca */
+            }
         
         .image-container:hover {
             transform: scale(1.02); /* Leggero effetto di ingrandimento al passaggio del mouse */
@@ -421,7 +420,7 @@
             }
             
             .image-container {
-                padding-bottom: 75%; /* Altezza ridotta su mobile */
+                height: 250px; /* Altezza ridotta su mobile */
             }
             
             p {
@@ -757,14 +756,8 @@
                     <div class="container mx-auto px-4">
                         <div class="flex flex-col md:flex-row items-center">
                             <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
-                                <!-- 
-                                Contenitore per l'immagine della storia
-                                Per inserire un'immagine di sfondo:
-                                1. Aggiungi style="background-image: url('TUA_IMMAGINE.jpg');" 
-                                2. Puoi modificare la posizione con background-position
-                                -->
-                                <div class="image-container bg-[var(--secondary-color)]" style="background-image: url('./img/storia/Antoine de Saint-Exupéry.jpg'); background-position: center top">
-                                    <!-- L'immagine sarà lo sfondo di questo div -->
+                                <div class="image-container">
+                                    <img src="./img/storia/Antoine de Saint-Exupéry.jpg" alt="Antoine de Saint-Exupéry" class="w-full h-full object-cover rounded-md" style="object-position: 50% 20%;">
                                 </div>
                             </div>
                             <div class="md:w-1/2">
@@ -781,13 +774,8 @@
                     <div class="container mx-auto px-4">
                         <div class="flex flex-col md:flex-row-reverse items-center">
                             <div class="md:w-1/2 mb-10 md:mb-0 md:pl-10">
-                                <!-- 
-                                Contenitore per l'immagine del musical
-                                Per inserire un'immagine di sfondo:
-                                1. Aggiungi style="background-image: url('TUA_IMMAGINE.jpg');" 
-                                -->
-                                <div class="image-container bg-[var(--green-color)]" style="background-image: url('./img/musical/piccoloprincipemusical8.jpg'); background-position: center top">
-                                    <!-- L'immagine sarà lo sfondo di questo div -->
+                                <div class="image-container">
+                                    <img src="./img/musical/piccoloprincipemusical8.jpg" alt="Il Piccolo Principe - Il Musical" class="w-full h-full object-cover rounded-md">
                                 </div>
                             </div>
                             <div class="md:w-1/2">
@@ -804,13 +792,8 @@
                     <div class="container mx-auto px-4">
                         <div class="flex flex-col md:flex-row items-center">
                             <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
-                                <!-- 
-                                Contenitore per l'immagine del cast
-                                Per inserire un'immagine di sfondo:
-                                1. Aggiungi style="background-image: url('TUA_IMMAGINE.jpg');" 
-                                -->
-                                <div class="image-container bg-[var(--accent-color)]" style="background-image: url('./img/cast/piccoloprincipemusical_cast2.jpg');">
-                                    <!-- L'immagine sarà lo sfondo di questo div -->
+                                <div class="image-container">
+                                    <img src="./img/cast/piccoloprincipemusical_cast1.jpg" alt="Il Piccolo Principe - Il Musical" class="w-full h-full object-cover rounded-md">
                                 </div>
                             </div>
                             <div class="md:w-1/2">
