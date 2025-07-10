@@ -514,6 +514,57 @@
         // Carica la pagina iniziale quando il documento è pronto
         document.addEventListener('DOMContentLoaded', () => {
             loadPage('home');
+
+            document.addEventListener("DOMContentLoaded", function() {
+            var lazyloadImages;
+
+            if ("IntersectionObserver" in window) {
+                lazyloadImages = document.querySelectorAll(".lazyload");
+                var imageObserver = new IntersectionObserver(function(entries, observer) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            var image = entry.target;
+                            image.src = image.dataset.src;
+                            image.classList.remove("lazyload");
+                            imageObserver.unobserve(image);
+                        }
+                    });
+                });
+
+                lazyloadImages.forEach(function(image) {
+                    imageObserver.observe(image);
+                });
+            } else {
+                // Fallback for browsers that don't support Intersection Observer
+                var lazyloadThrottleTimeout;
+                lazyloadImages = document.querySelectorAll(".lazyload");
+
+                function lazyload() {
+                    if (lazyloadThrottleTimeout) {
+                        clearTimeout(lazyloadThrottleTimeout);
+                    }
+
+                    lazyloadThrottleTimeout = setTimeout(function() {
+                        var scrollTop = window.pageYOffset;
+                        lazyloadImages.forEach(function(img) {
+                            if (img.offsetTop < (window.innerHeight + scrollTop)) {
+                                img.src = img.dataset.src;
+                                img.classList.remove('lazyload');
+                            }
+                        });
+                        if (lazyloadImages.length == 0) {
+                            document.removeEventListener("scroll", lazyload);
+                            window.removeEventListener("resize", lazyload);
+                            window.removeEventListener("orientationChange", lazyload);
+                        }
+                    }, 20);
+                }
+
+                document.addEventListener("scroll", lazyload);
+                window.addEventListener("resize", lazyload);
+                window.addEventListener("orientationChange", lazyload);
+            }
+        });
             
             // Aggiungi event listener per i link di navigazione e il menu mobile
             document.addEventListener('click', (e) => {
@@ -615,8 +666,8 @@
                     <!-- 
                     Per inserire la tua immagine del logo:
                     -->
-                    <img src="./img/home/piccoloprincipemusical_logo2.png" alt="Il Piccolo Principe - Il Musical" class="logo-image">
-                    <img src="./img/home/piccoloprincipemusical_logo.png" alt="Il Piccolo Principe - Il Musical" class="logo-image">
+                    <img src="./img/home/piccoloprincipemusical_logo2.png" alt="Il Piccolo Principe - Il Musical" class="logo-image" loading="lazy">
+                    <img src="./img/home/piccoloprincipemusical_logo.png" alt="Il Piccolo Principe - Il Musical" class="logo-image" loading="lazy">
                 </div>
             `;
             
@@ -762,7 +813,7 @@
                         <div class="flex flex-col md:flex-row items-center">
                             <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
                                 <div class="image-container">
-                                    <img src="./img/storia/Antoine de Saint-Exupéry.jpg" alt="Antoine de Saint-Exupéry" class="w-full h-full object-cover rounded-md" style="object-position: 50% 20%;">
+                                    <img src="./img/storia/Antoine de Saint-Exupéry.jpg" alt="Antoine de Saint-Exupéry" class="w-full h-full object-cover rounded-md" style="object-position: 50% 20%;" loading="lazy">
                                 </div>
                             </div>
                             <div class="md:w-1/2">
@@ -780,7 +831,7 @@
                         <div class="flex flex-col md:flex-row-reverse items-center">
                             <div class="md:w-1/2 mb-10 md:mb-0 md:pl-10">
                                 <div class="image-container">
-                                    <img src="./img/musical/piccoloprincipemusical8.jpg" alt="Il Piccolo Principe - Il Musical" class="w-full h-full object-cover rounded-md">
+                                    <img src="./img/musical/piccoloprincipemusical8.jpg" alt="Il Piccolo Principe - Il Musical" class="w-full h-full object-cover rounded-md" loading="lazy">
                                 </div>
                             </div>
                             <div class="md:w-1/2">
@@ -798,7 +849,7 @@
                         <div class="flex flex-col md:flex-row items-center">
                             <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
                                 <div class="image-container">
-                                    <img src="./img/cast/piccoloprincipemusical_cast1.jpg" alt="Il Piccolo Principe - Il Musical" class="w-full h-full object-cover rounded-md">
+                                    <img src="./img/cast/piccoloprincipemusical_cast1.jpg" alt="Il Piccolo Principe - Il Musical" class="w-full h-full object-cover rounded-md" loading="lazy">
                                 </div>
                             </div>
                             <div class="md:w-1/2">
