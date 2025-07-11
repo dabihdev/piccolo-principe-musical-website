@@ -1,25 +1,19 @@
-
-
 <!DOCTYPE html>
 <html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Il Piccolo Principe - Il Musical</title>
-    <!-- Inclusione di Tailwind CSS per lo styling -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Inclusione di Font Awesome per le icone -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- Inclusione dei font Google -->
     <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Grand+Hotel&display=swap" rel="stylesheet">
-    <!-- Icona -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="manifest" href="/site.webmanifest">
     <style>
-        /* 
+        /*
         ===================================
         VARIABILI COLORI PRINCIPALI DEL SITO
         ===================================
@@ -36,8 +30,8 @@
             --dark-accent: #a8523c; /* Rosso/Marrone scuro - usato per hover sui pulsanti */
             --star-color: #ffd700; /* Colore oro per la stella */
         }
-        
-        /* 
+
+        /*
         ===================================
         STILI DI BASE
         ===================================
@@ -48,14 +42,14 @@
             background-color: #f8f9fa;
             font-size: 20px; /* Dimensione base del testo */
         }
-        
+
         /* Stile per tutti i titoli */
         h1, h2, h3, h4, h5 {
             font-family: 'Grand Hotel', cursive; /* Font decorativo per i titoli */
             letter-spacing: 1px;
         }
-        
-        /* 
+
+        /*
         ===================================
         HERO SECTION
         ===================================
@@ -74,8 +68,8 @@
             align-items: center;
             justify-content: center;
         }
-        
-        /* 
+
+        /*
         ===================================
         STILI PULSANTI
         ===================================
@@ -89,12 +83,12 @@
             font-size: 1.5rem;
             padding: 0.9rem 1.8rem;
         }
-        
+
         .btn-primary:hover {
             background-color: var(--dark-accent); /* Cambia colore al passaggio del mouse */
             transform: translateY(-2px); /* Effetto di sollevamento */
         }
-        
+
         /* Stile pulsante secondario (bordo colorato) */
         .btn-secondary {
             background-color: transparent;
@@ -105,13 +99,13 @@
             font-size: 1.5rem;
             padding: 0.9rem 1.8rem;
         }
-        
+
         .btn-secondary:hover {
             background-color: var(--accent-color);
             color: var(--light-color);
         }
-        
-        /* 
+
+        /*
         ===================================
         SLIDESHOW
         ===================================
@@ -122,7 +116,7 @@
             overflow: hidden;
             background-color: var(--primary-color);
         }
-        
+
         .slide {
             position: absolute;
             top: 0;
@@ -134,19 +128,19 @@
             background-position: center;
             background-size: cover;
         }
-        
+
         .slide.active {
             opacity: 1;
         }
-        
+
         .quote-overlay {
             background-color: rgba(0, 0, 0, 0.5);
             padding: 2.5rem;
             border-radius: 8px;
             max-width: 80%;
         }
-        
-        /* 
+
+        /*
         ===================================
         SEZIONI CONTENUTO
         ===================================
@@ -154,13 +148,13 @@
         .section {
             padding: 6rem 0;
         }
-        
+
         .section-title {
             position: relative;
             display: inline-block;
             margin-bottom: 2.5rem;
         }
-        
+
         /* Linea decorativa sotto i titoli delle sezioni */
         .section-title::after {
             content: '';
@@ -171,8 +165,8 @@
             height: 4px;
             background-color: var(--accent-color);
         }
-        
-        /* 
+
+        /*
         ===================================
         NAVIGAZIONE
         ===================================
@@ -182,7 +176,7 @@
             transition: all 0.3s ease;
             font-size: 1.4rem;
         }
-        
+
         /* Effetto linea sotto i link di navigazione al passaggio del mouse */
         .nav-link::after {
             content: '';
@@ -194,21 +188,21 @@
             background-color: var(--secondary-color);
             transition: width 0.3s ease;
         }
-        
+
         .nav-link:hover::after {
             width: 100%;
         }
-        
+
         /* Stile per il link di navigazione attivo */
         .active-nav {
             color: var(--secondary-color);
         }
-        
+
         .active-nav::after {
             width: 100%;
         }
-        
-        /* 
+
+        /*
         ===================================
         SEZIONI CONTENUTO
         ===================================
@@ -216,8 +210,8 @@
         .content-section {
             padding: 2.5rem 0;
         }
-        
-        /* 
+
+        /*
         ===================================
         CONTENITORI IMMAGINI
         ===================================
@@ -227,7 +221,7 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease;
             height: 400px;
-            /* 
+            /*
             Per inserire un'immagine di sfondo:
             1. Aggiungi style="background-image: url('TUA_IMMAGINE.jpg');" all'elemento HTML
             2. Puoi modificare la posizione dell'immagine aggiungendo:
@@ -241,12 +235,12 @@
             height: 400px; /* Altezza di default */
             overflow: hidden; /* Assicurati che l'immagine non esca */
             }
-        
+
         .image-container:hover {
             transform: scale(1.02); /* Leggero effetto di ingrandimento al passaggio del mouse */
         }
-        
-        /* 
+
+        /*
         ===================================
         FOOTER
         ===================================
@@ -256,8 +250,8 @@
             color: var(--light-color);
             font-size: 1.2rem;
         }
-        
-        /* 
+
+        /*
         ===================================
         ANIMAZIONI
         ===================================
@@ -266,12 +260,12 @@
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        
+
         .animate-fade-in {
             animation: fadeIn 1s ease forwards;
         }
-        
-        /* 
+
+        /*
         ===================================
         MENU MOBILE
         ===================================
@@ -290,12 +284,12 @@
             justify-content: center;
             align-items: center;
         }
-        
+
         .mobile-menu.active {
             display: flex; /* Mostrato quando ha la classe active */
         }
-        
-        /* 
+
+        /*
         ===================================
         PARAGRAFI
         ===================================
@@ -304,8 +298,8 @@
             font-size: 1.4rem;
             line-height: 1.8;
         }
-        
-        /* 
+
+        /*
         ===================================
         LOGO PERSONALIZZATO
         ===================================
@@ -315,40 +309,40 @@
             align-items: center;
             flex-wrap: wrap;
         }
-        
+
         .logo-word {
             font-family: 'Grand Hotel', cursive;
             font-size: 2.5rem;
             margin-right: 0.2rem;
         }
-        
+
         .logo-color-1 {
             color: var(--primary-color);
         }
-        
+
         .logo-color-2 {
             color: var(--accent-color);
         }
-        
+
         .logo-color-3 {
             color: var(--green-color);
         }
-        
+
         .logo-color-4 {
             color: var(--dark-accent);
         }
-        
+
         .logo-color-5 {
             color: var(--secondary-color);
         }
-        
+
         .logo-dash {
             color: var(--text-color);
             font-size: 2.5rem;
             margin: 0 0.3rem;
             font-family: 'Grand Hotel', cursive;
         }
-        
+
         .logo-star {
             color: var(--star-color);
             font-size: 1.8rem;
@@ -356,25 +350,37 @@
             transform: rotate(10deg);
             display: inline-block;
         }
-        
+
         /* Animazione per la stella */
         @keyframes twinkle {
             0% { opacity: 1; }
             50% { opacity: 0.5; }
             100% { opacity: 1; }
         }
-        
+
         .logo-star {
             animation: twinkle 2s infinite;
         }
-        
+
         /* Stile per il logo immagine */
         .logo-image {
             height: 150px;
             max-width: 400px;
             object-fit: contain;
         }
-        
+
+
+        /*
+        ===================================
+        LOGO DABIHDEV
+        ===================================
+        */
+        /* Logo styling */
+        .logo {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 800;
+        }
+
         /* Versione mobile del logo */
         @media (max-width: 768px) {
             .logo-container {
@@ -382,32 +388,32 @@
                 align-items: flex-start;
                 line-height: 1;
             }
-            
+
             .logo-word {
                 font-size: 2rem;
             }
-            
+
             .logo-dash {
                 font-size: 2rem;
                 margin: 0.2rem 0;
             }
-            
+
             .logo-star {
                 font-size: 1.5rem;
             }
-            
+
             .logo-second-line {
                 display: flex;
                 align-items: center;
             }
-            
+
             .logo-image {
                 height: 90px;
                 max-width: 250px;
             }
         }
-        
-        /* 
+
+        /*
         ===================================
         MEDIA QUERIES PER RESPONSIVE DESIGN
         ===================================
@@ -417,103 +423,236 @@
                 min-height: 70vh; /* Altezza ridotta su mobile */
                 background-image: url("./img/home/piccoloprincipe_locandina.jpg")
             }
-            
+
             .hero-content {
                 padding: 0 1rem;
             }
-            
+
             .section {
                 padding: 3rem 0; /* Padding ridotto su mobile */
             }
-            
+
             .image-container {
                 height: 250px; /* Altezza ridotta su mobile */
             }
-            
+
             p {
                 font-size: 1.3rem; /* Font leggermente più piccolo su mobile */
             }
-            
+
             .btn-primary, .btn-secondary {
                 font-size: 1.2rem;
                 padding: 0.7rem 1.4rem;
             }
-            
+
             /* Riduzione dimensioni pulsante "Acquista ora" nella sezione slideshow */
             .quote-overlay .btn-primary {
                 font-size: 1.1rem;
                 padding: 0.6rem 1.2rem;
             }
-            
+
             /* Riduzione dimensioni pulsante "Acquista ora" nella sezione tickets */
             #tickets .btn-primary {
                 font-size: 1.2rem;
                 padding: 0.8rem 1.5rem;
             }
 
-            /* Riduzione dimensioni pulsante "Prenota i tuoi biglietti" nella hero section */
+            /* Riduzione dimensioni pulsante "Acquista i biglietti" nella hero section */
             #button-hero-section {
                 position: relative;
                 font-size: 1.2rem;
                 padding: 0.5rem 1.5rem;
                 top: 110px
             }
-            
+
             .section-title::after {
                 width: 60px; /* Linea sotto i titoli più corta su mobile */
             }
-            
+
             .quote-overlay {
                 max-width: 95%;
                 padding: 1.5rem;
             }
-            
+
             .quote-overlay p {
                 font-size: 1.2rem;
             }
-            
+
             /* Riduzione dimensioni titoli su mobile */
             h1 {
                 font-size: 3.5rem !important;
             }
-            
+
             h2 {
                 font-size: 3rem !important;
             }
-            
+
             h3 {
                 font-size: 2.5rem !important;
+            }
+        }
+
+        /* Stili per il banner cookie */
+        #cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--primary-color);
+            color: var(--light-color);
+            padding: 1.5rem 1rem;
+            text-align: center;
+            z-index: 999;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+            transform: translateY(100%); /* Nasconde inizialmente il banner */
+            transition: transform 0.5s ease-out; /* Animazione di scorrimento */
+            display: flex;
+            flex-direction: column; /* Imposta la direzione in colonna per mobile */
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        #cookie-banner.show {
+            transform: translateY(0); /* Mostra il banner */
+        }
+
+        #cookie-banner p {
+            margin-bottom: 0; /* Rimuove il margine inferiore predefinito del paragrafo */
+            font-size: 1.1rem;
+            line-height: 1.5;
+        }
+
+        #cookie-banner button {
+            background-color: var(--accent-color);
+            color: var(--light-color);
+            padding: 0.7rem 1.5rem;
+            border-radius: 0.375rem; /* rounded-md */
+            font-weight: 600; /* font-semibold */
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-size: 1.1rem;
+        }
+
+        #cookie-banner button:hover {
+            background-color: var(--dark-accent);
+        }
+
+        /* Stile per il pulsante di riapertura del banner */
+        #open-cookie-settings {
+            position: fixed;
+            bottom: 1rem;
+            left: 1rem;
+            background-color: var(--primary-color);
+            color: var(--light-color);
+            padding: 0.8rem 1.2rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 998;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        #open-cookie-settings.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        @media (min-width: 768px) {
+            #cookie-banner {
+                flex-direction: row; /* Imposta la direzione in riga per desktop */
+                justify-content: center;
+                gap: 2rem;
+                padding: 1.5rem 2rem;
+            }
+
+            #cookie-banner p {
+                margin-bottom: 0;
             }
         }
     </style>
 </head>
 <body>
-    <!-- 
-    ===================================
-    CONTENITORE PRINCIPALE
-    ===================================
-    Questo div contiene il contenuto della pagina corrente,
-    che viene caricato dinamicamente tramite JavaScript
-    -->
     <div id="content">
-        <!-- La home page viene caricata di default -->
+        </div>
+
+    <div id="cookie-banner">
+        <p>Questo sito utilizza solo cookie tecnici per garantire la corretta funzionalità. Nessun dato personale viene raccolto o utilizzato per tracciamento. Per maggiori dettagli, consulta la nostra <a href="#cookie-policy-section" class="underline hover:text-[var(--secondary-color)]">Cookie Policy</a>.</p>
+        <button id="accept-cookies">Ho capito</button>
     </div>
+
+    <button id="open-cookie-settings" class="btn-primary px-4 py-2 rounded-md">
+        <i class="fas fa-cookie-bite mr-2"></i> Impostazioni Cookie
+    </button>
 
     <script>
         // ===================================
         // GESTIONE DELLA NAVIGAZIONE TRA LE PAGINE
         // ===================================
         let currentPage = 'home';
-        
+
         // ===================================
         // CONFIGURAZIONE DEL LOGO
         // ===================================
         // Imposta su 'image' per usare un'immagine come logo, o 'text' per usare il logo testuale
-        const useLogo = 'image'; 
-        
+        const useLogo = 'image';
+
+        // ===================================
+        // GESTIONE DEL BANNER COOKIE
+        // ===================================
+        const cookieBanner = document.getElementById('cookie-banner');
+        const acceptCookiesBtn = document.getElementById('accept-cookies');
+        const openCookieSettingsBtn = document.getElementById('open-cookie-settings');
+
+        function setCookie(name, value, days) {
+            let expires = "";
+            if (days) {
+                let date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "") + expires + "; path=/";
+        }
+
+        function getCookie(name) {
+            let nameEQ = name + "=";
+            let ca = document.cookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+                if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+            }
+            return null;
+        }
+
+        function showCookieBanner() {
+            cookieBanner.classList.add('show');
+            openCookieSettingsBtn.classList.remove('show');
+        }
+
+        function hideCookieBanner() {
+            cookieBanner.classList.remove('show');
+            openCookieSettingsBtn.classList.add('show');
+        }
+
+        function checkCookieConsent() {
+            const consent = getCookie('cookieConsent');
+            if (consent === 'true') {
+                hideCookieBanner();
+            } else {
+                showCookieBanner();
+            }
+        }
+
         // Carica la pagina iniziale quando il documento è pronto
         document.addEventListener('DOMContentLoaded', () => {
             loadPage('home');
+            checkCookieConsent(); // Controlla il consenso dei cookie all'avvio
 
             // aggiungi event listener per il lazy loading
             document.addEventListener("DOMContentLoaded", function() {
@@ -566,40 +705,52 @@
                     window.addEventListener("orientationChange", lazyload);
                 }
             });
-            
+
             // Aggiungi event listener per i link di navigazione e il menu mobile
-        document.addEventListener('click', (e) => {
+            document.addEventListener('click', (e) => {
                 // Gestione dei link di navigazione
                 if (e.target.classList.contains('nav-link')) {
                     e.preventDefault();
                     const page = e.target.getAttribute('data-page');
                     loadPage(page);
                 }
-                
+
                 // Gestione del logo (torna alla home)
                 if (e.target.closest('.logo-link')) {
                     e.preventDefault();
                     loadPage('home');
                 }
-                
+
                 // Gestione del pulsante del menu mobile
                 if (e.target.closest('.menu-toggle')) {
                     toggleMobileMenu();
                 }
             });
+
+            // Event listener per il pulsante "Accetto" del banner
+            acceptCookiesBtn.addEventListener('click', () => {
+                setCookie('cookieConsent', 'true', 365); // Consenso valido per 365 giorni
+                hideCookieBanner();
+            });
+
+            // Event listener per il pulsante "Impostazioni Cookie"
+            openCookieSettingsBtn.addEventListener('click', () => {
+                showCookieBanner();
+                setCookie('cookieConsent', '', -1); // Elimina il cookie per riaprire il banner
+            });
         });
-        
+
         // Funzione per attivare/disattivare il menu mobile
         function toggleMobileMenu() {
             const mobileMenu = document.querySelector('.mobile-menu');
             mobileMenu.classList.toggle('active');
         }
-        
+
         // Funzione per caricare una pagina specifica
         function loadPage(page) {
             currentPage = page;
             const contentDiv = document.getElementById('content');
-            
+
             // Aggiorna la classe attiva nei link di navigazione
             document.querySelectorAll('.nav-link').forEach(link => {
                 if (link.getAttribute('data-page') === page) {
@@ -608,7 +759,7 @@
                     link.classList.remove('active-nav');
                 }
             });
-            
+
             // Carica il contenuto della pagina in base alla selezione
             switch(page) {
                 case 'home':
@@ -628,17 +779,17 @@
                     contentDiv.innerHTML = getHomePage();
                     startSlideshow();
             }
-            
+
             // Chiudi il menu mobile se è aperto
             const mobileMenu = document.querySelector('.mobile-menu');
             if (mobileMenu && mobileMenu.classList.contains('active')) {
                 mobileMenu.classList.remove('active');
             }
-            
+
             // Scorri in alto quando cambi pagina
             window.scrollTo(0, 0);
         }
-        
+
         // ===================================
         // HEADER COMUNE A TUTTE LE PAGINE
         // ===================================
@@ -653,39 +804,32 @@
                         <span class="logo-dash">-</span>
                         <span class="logo-word logo-color-4">il</span>
                         <span class="logo-word logo-color-5">Musical</span>
-                        <!-- Icona stella del Piccolo Principe -->
                         <span class="logo-star">
                             <i class="fas fa-star"></i>
                         </span>
                     </div>
                 </div>
             `;
-            
+
             // Logo con immagine
             const imageLogo = `
                 <div class="flex items-center">
-                    <!-- 
-                    Per inserire la tua immagine del logo:
-                    -->
                     <img src="./img/home/piccoloprincipemusical_logo2.png" alt="Il Piccolo Principe - Il Musical" class="logo-image" loading="lazy">
                     <img src="./img/home/piccoloprincipemusical_logo.png" alt="Il Piccolo Principe - Il Musical" class="logo-image" loading="lazy">
                 </div>
             `;
-            
+
             // Scegli quale logo utilizzare in base alla configurazione
             const logoToUse = useLogo === 'image' ? imageLogo : textLogo;
-            
+
             return `
-                <!-- Header fisso in alto -->
                 <header class="bg-white shadow-md fixed w-full z-50">
                     <div class="container mx-auto px-4 py-4">
                         <div class="flex justify-between items-center">
-                            <!-- Logo personalizzato (cliccabile per tornare alla home) -->
                             <a href="#" class="logo-link" data-page="home">
                                 ${logoToUse}
                             </a>
-                            
-                            <!-- Menu di navigazione desktop (nascosto su mobile) -->
+
                             <nav class="hidden md:flex space-x-8">
                                 <a href="#" class="nav-link ${currentPage === 'home' ? 'active-nav' : ''}" data-page="home">Home</a>
                                 <a href="#" class="nav-link ${currentPage === 'storia' ? 'active-nav' : ''}" data-page="storia">La Storia</a>
@@ -693,34 +837,29 @@
                                 <a href="#" class="nav-link ${currentPage === 'cast' ? 'active-nav' : ''}" data-page="cast">Il Cast</a>
                                 <a href="https://www.liveticket.it/evento.aspx?Id=597581&InstantBuy=1" target="_blank" class="btn-primary px-5 py-2 rounded-md">Biglietti</a>
                             </nav>
-                            
-                            <!-- Pulsante menu mobile (visibile solo su mobile) -->
+
                             <button class="md:hidden menu-toggle">
                                 <i class="fas fa-bars text-4xl"></i>
                             </button>
                         </div>
                     </div>
                 </header>
-                
-                <!-- Menu mobile (nascosto di default) -->
+
                 <div class="mobile-menu flex-col justify-center items-center space-y-8">
-                    <!-- Pulsante per chiudere il menu mobile -->
                     <button class="absolute top-4 right-4 menu-toggle">
                         <i class="fas fa-times text-white text-4xl"></i>
                     </button>
-                    <!-- Link di navigazione mobile -->
                     <a href="#" class="text-white text-4xl nav-link" data-page="home">Home</a>
                     <a href="#" class="text-white text-4xl nav-link" data-page="storia">La Storia</a>
                     <a href="#" class="text-white text-4xl nav-link" data-page="musical">Il Musical</a>
                     <a href="#" class="text-white text-4xl nav-link" data-page="cast">Il Cast</a>
                     <a href="https://www.liveticket.it/evento.aspx?Id=597581&InstantBuy=1" target="_blank" class="btn-primary px-6 py-3 rounded-md text-3xl">Biglietti</a>
                 </div>
-                
-                <!-- Spazio per compensare l'header fisso -->
+
                 <div class="h-24"></div>
             `;
         }
-        
+
         // ===================================
         // FOOTER COMUNE A TUTTE LE PAGINE
         // ===================================
@@ -728,34 +867,32 @@
             return `
                 <footer class="py-16">
                     <div class="container mx-auto px-4">
-                        <!-- Griglia footer a 3 colonne (1 colonna su mobile) -->
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-                            <!-- Colonna 1: Informazioni generali -->
                             <div>
                                 <h3 class="text-4xl font-bold mb-6">Il Piccolo Principe - Il Musical</h3>
                                 <p class="mb-6">Le messe in scena sono organizzate e coordinate da Ex Concordia Felicitas, associazione culturale che ha il fine di rivitalizzare l'identità culturale di Fano e il suo territorio. Scopri tutte le loro attività sui social:</p>
-                                <!-- Social media links -->
                                 <div class="flex space-x-6">
                                     <a href="https://www.facebook.com/exconcordiafelicitas/" target="_blank" class="text-white hover:text-[var(--secondary-color)] text-3xl"><i class="fab fa-facebook-f"></i></a>
                                     <a href="https://www.instagram.com/exconcordiafelicitas_fano/" target="_blank" class="text-white hover:text-[var(--secondary-color)] text-3xl"><i class="fab fa-instagram"></i></a>
                                 </div>
                             </div>
-                            
-                            <!-- Colonna 2: Contatti -->
+
                             <div>
                                 <h3 class="text-4xl font-bold mb-6">Contatti</h3>
                                 <p class="mb-3"><i class="fas fa-phone mr-3"></i> +39 3493773936</p>
                                 <p><i class="fas fa-envelope mr-3"></i> exconcordiafelicitas@outlook.com</p>
                             </div>
-                            
-                            <!-- Colonna 3: Orari spettacoli -->
+
                             <div>
                                 <h3 class="text-4xl font-bold mb-6">Orari</h3>
                                 <p class="mb-3">2 agosto 2025 - Inizio spettacolo alle 21:30</p>
                             </div>
                         </div>
-                        
-                        <!-- Copyright -->
+                        <div class="text-center">
+                            <p>Sito web realizzato da</p>
+                            <a href="https://dabihdev.github.io" target="_blank" class="text-xl md:text-2xl font-bold logo"><span class="text-orange-500">Dabih</span><span class="text-white">Dev</span> <i class="fas fa-terminal"></i></a>
+                        </div>
+
                         <div class="border-t border-white border-opacity-20 mt-10 pt-10 text-center">
                             <p>&copy; 2025 Il Piccolo Principe - Il Musical. Tutti i diritti riservati.</p>
                         </div>
@@ -763,42 +900,27 @@
                 </footer>
             `;
         }
-        
+
         // ===================================
         // PAGINA HOME
         // ===================================
         function getHomePage() {
             return `
                 ${getHeader()}
-                
-                <!-- Hero Section -->
-                <!-- 
-                Per inserire l'immagine della locandina:
-                1. Sostituisci 'INSERISCI_QUI_URL_LOCANDINA' nella classe .hero-section nel CSS
-                2. Oppure aggiungi direttamente style="background-image: url('TUA_IMMAGINE.jpg');" a questo div
-                -->
+
                 <section class="hero-section">
-                    <!-- Solo il pulsante centrato nella hero section -->
-                    <a href="https://www.liveticket.it/evento.aspx?Id=597581&InstantBuy=1" target="_blank" id="button-hero-section" class="btn-primary px-12 py-6 rounded-md text-3xl md:text-3xl md:px-12 md:py-6">Prenota i tuoi biglietti</a>
+                    <a href="https://www.liveticket.it/evento.aspx?Id=597581&InstantBuy=1" target="_blank" id="button-hero-section" class="btn-primary px-12 py-6 rounded-md text-3xl md:text-3xl md:px-12 md:py-6">Acquista i biglietti</a>
                 </section>
-                
-                <!-- Slideshow Section -->
+
                 <section class="relative">
                     <div class="slideshow-container">
-                        <!-- 
-                        Slideshow con 6 immagini
-                        Per inserire le immagini dello slideshow:
-                        1. Sostituisci il background-color con background-image: url('TUA_IMMAGINE.jpg');
-                        2. Puoi anche aggiungere direttamente style="background-image: url('TUA_IMMAGINE.jpg');" a ciascun div
-                        -->
                         <div class="slide" style="background-image: url('./img/home/piccoloprincipemusical3.jpg'); background-position: center top"></div>
                         <div class="slide" style="background-image: url('./img/home/piccoloprincipemusical2.jpg'); background-position: center top"></div>
                         <div class="slide" style="background-image: url('./img/home/piccoloprincipemusical1.jpg'); background-position: center top"></div>
                         <div class="slide" style="background-image: url('./img/home/piccoloprincipemusical4.jpg'); background-position: center top"></div>
                         <div class="slide" style="background-image: url('./img/home/piccoloprincipemusical6.jpg'); background-position: center top"></div>
                         <div class="slide" style="background-image: url('./img/home/piccoloprincipemusical5.jpg');"></div>
-                        
-                        <!-- Overlay con citazione e pulsante -->
+
                         <div class="absolute inset-0 flex items-center justify-center">
                             <div class="quote-overlay text-center">
                                 <p class="text-white text-4xl md:text-5xl italic mb-10">"Tutti i grandi sono stati bambini una volta. Ma pochi se ne ricordano."</p>
@@ -807,8 +929,7 @@
                         </div>
                     </div>
                 </section>
-                
-                <!-- Storia Section -->
+
                 <section class="section bg-white">
                     <div class="container mx-auto px-4">
                         <div class="flex flex-col md:flex-row items-center">
@@ -819,14 +940,13 @@
                             </div>
                             <div class="md:w-1/2">
                                 <h2 class="section-title text-6xl font-bold">La Storia</h2>
-                                <p class="mb-8">Il Piccolo Principe è un racconto di Antoine de Saint-Exupéry, uno dei libri più tradotti e venduti al mondo. Racconta di un pilota che, precipitato nel deserto del Sahara, incontra un bambino, il piccolo principe, che gli chiede di disegnargli una pecora...</p>
+                                <p class="mb-8">Il Piccolo Principe è una storia senza tempo, nata dalla penna di Antoine de Saint-Exupéry nel 1943.Il suo linguaggio semplice ed etereo la rende una favola moderna, ricca di significati profondi che analizzano l'interiorità dell'essere umano...</p>
                                 <a href="#" class="btn-secondary px-8 py-4 rounded-md nav-link text-2xl" data-page="storia">Scopri di più</a>
                             </div>
                         </div>
                     </div>
                 </section>
-                
-                <!-- Musical Section -->
+
                 <section class="section bg-gray-100">
                     <div class="container mx-auto px-4">
                         <div class="flex flex-col md:flex-row-reverse items-center">
@@ -837,14 +957,13 @@
                             </div>
                             <div class="md:w-1/2">
                                 <h2 class="section-title text-6xl font-bold">Il Musical</h2>
-                                <p class="mb-8">Il nostro musical porta sul palco la magia e la poesia del Piccolo Principe, con musiche originali, coreografie spettacolari e scenografie che trasportano lo spettatore nei diversi pianeti visitati dal protagonista...</p>
+                                <p class="mb-8">Tutte le musiche sono state composte da Damiano Fabbri, che ha anche adattato il testo. Il progetto nasce nel 2019 come tesi di laurea, con l’obiettivo di creare un connubio tra musica e narrativa per ragazzi. Sullo spunto di opere simili come Pierino e il Lupo di Prokofiev, nasce questo racconto musicale...</p>
                                 <a href="#" class="btn-secondary px-8 py-4 rounded-md nav-link text-2xl" data-page="musical">Scopri di più</a>
                             </div>
                         </div>
                     </div>
                 </section>
-                
-                <!-- Cast Section -->
+
                 <section class="section bg-white">
                     <div class="container mx-auto px-4">
                         <div class="flex flex-col md:flex-row items-center">
@@ -855,68 +974,69 @@
                             </div>
                             <div class="md:w-1/2">
                                 <h2 class="section-title text-6xl font-bold">Il Cast</h2>
-                                <p class="mb-8">Il nostro cast è composto da talentuosi attori, cantanti e ballerini che danno vita ai personaggi indimenticabili del Piccolo Principe. Scopri chi sono gli artisti che rendono possibile questa magica esperienza...</p>
+                                <p class="mb-8">Il nostro cast è composto da attori, cantanti e ballerine che danno vita ai personaggi indimenticabili del Piccolo Principe. Scopri chi sono gli artisti che rendono possibile questa magica esperienza...</p>
                                 <a href="#" class="btn-secondary px-8 py-4 rounded-md nav-link text-2xl" data-page="cast">Scopri di più</a>
                             </div>
                         </div>
                     </div>
                 </section>
-                
-                <!-- Tickets Section -->
+
                 <section id="tickets" class="section bg-[var(--primary-color)] text-white">
                     <div class="container mx-auto px-4 text-center">
-                        <h2 class="text-6xl font-bold mb-8">Prenota i tuoi biglietti</h2>
-                        <p class="mb-10 max-w-3xl mx-auto">Non perdere l'occasione di vivere la magia del Piccolo Principe. Prenota ora i tuoi biglietti per uno spettacolo che emozionerà grandi e piccini.</p>
+                        <h2 class="text-6xl font-bold mb-8">Acquista i biglietti</h2>
+                        <p class="mb-10 max-w-3xl mx-auto">Non perdere l'occasione di vivere la magia del Piccolo Principe. Acquista ora i tuoi biglietti per uno spettacolo che emozionerà grandi e piccini.</p>
                         <a href="https://www.liveticket.it/evento.aspx?Id=597581&InstantBuy=1" target="_blank" class="btn-primary px-8 py-4 rounded-md text-xl md:text-3xl md:px-12 md:py-6">Acquista ora</a>
                     </div>
                 </section>
-                
+
+                <section id="cookie-policy-section" class="section bg-gray-100 text-[var(--text-color)]">
+                    <div class="container mx-auto px-4">
+                        <h2 class="section-title text-6xl font-bold mb-8">Cookie Policy</h2>
+                        <p class="mb-6">Questo sito web utilizza solo cookie tecnici, che sono essenziali per il corretto funzionamento del sito. Questi cookie non raccolgono alcuna informazione personale dell'utente e non sono utilizzati per scopi di marketing o tracciamento.</p>
+                        <h3 class="text-4xl font-bold mb-4">Cosa sono i Cookie Tecnici?</h3>
+                        <p class="mb-6">I cookie tecnici sono cookie che servono a effettuare la navigazione o a fornire un servizio richiesto dall'utente. Non vengono utilizzati per scopi ulteriori e sono normalmente installati direttamente dal titolare o gestore del sito web.</p>
+                        <h3 class="text-4xl font-bold mb-4">Cookie utilizzati su questo sito:</h3>
+                        <ul class="list-disc list-inside mb-6">
+                            <li class="mb-2"><strong>cookieConsent:</strong> Utilizzato per memorizzare il tuo consenso all'utilizzo dei cookie. Durata: 365 giorni.</li>
+                            <li class="mb-2">Altri cookie tecnici potrebbero essere utilizzati per funzionalità interne del sito, come la gestione della navigazione tra le pagine. Questi cookie sono strettamente necessari e non richiedono il tuo consenso esplicito.</li>
+                        </ul>
+                        <h3 class="text-4xl font-bold mb-4">Gestione dei Cookie</h3>
+                        <p class="mb-6">Poiché utilizziamo esclusivamente cookie tecnici, non è necessario alcun consenso preventivo da parte tua. Tuttavia, se desideri gestire o disabilitare i cookie, puoi farlo attraverso le impostazioni del tuo browser. Tieni presente che la disabilitazione dei cookie tecnici potrebbe compromettere la funzionalità del sito.</p>
+                    </div>
+                </section>
+
                 ${getFooter()}
             `;
         }
-        
+
         // ===================================
         // PAGINA LA STORIA
         // ===================================
         function getStoriaPage() {
             return `
                 ${getHeader()}
-                
+
                 <section class="py-20 bg-white">
                     <div class="container mx-auto px-4">
                         <h1 class="text-7xl font-bold mb-16 text-center" style="color: var(--accent-color)">La Storia</h1>
-                            
-                            <!-- Prima immagine -->
+
                             <div class="content-section">
-                                <!-- 
-                                Per inserire un'immagine di sfondo:
-                                1. Aggiungi style="background-image: url('TUA_IMMAGINE.jpg');" 
-                                -->
                                 <div class="image-container bg-[var(--secondary-color)] mb-8" style="background-image: url('./img/storia/piccoloprincipemusical11.jpg'); background-position: center">
-                                    <!-- L'immagine sarà lo sfondo di questo div -->
-                                </div>
+                                    </div>
                             </div>
-                            
-                            <!-- Seconda parte della storia -->
+
                             <div class="content-section">
                                 <p class="mb-8">Il Piccolo Principe è una storia senza tempo, nata dalla penna di Antoine de Saint-Exupéry nel 1943.Il suo linguaggio semplice ed etereo la rende una favola moderna, ricca di significati profondi che analizzano l'interiorità dell'essere umano, mettendo in risalto le contraddizioni degli adulti di fronte alla logica pura ed essenziale dell'infanzia.</p>
                                 <p class="mb-8">Proprio l'essenziale è uno dei termini cardine dell'intera opera e la citazione “l'essenziale è invisibile agli occhi” è diventata una delle frasi più diffuse e apprezzate della letteratura. Lo stesso autore nel corso della sua vita ha lamentato più volte la mancanza di minimalismo nelle relazioni tra adulti, accusandoli di un’eccessiva ricerca del di più; egli infatti ha scritto: “a volte è sufficiente un sorso d’acqua per trovare quello che cerchiamo”.</p>
                                 <p class="mb-8">Il libro è dedicato all'amico Léon Werth, a quando anche lui era ancora un bambino.</p>
-                                <p class="mb-8">La storia dell'ometto dai capelli biondi e gli occhi curiosi vi porterà in un viaggio emozionante tra amore e amicizia, ricerca e comprensione. Un’avventura ricca di incontri - una volpe, un serpente e tanti adulti bizzarri - passando da piccoli pianeti nascosti tra le stelle a deserti sconfinati, fino al ritorno dalla sua amata rosa, per la quale inizierà e finirà l'intero viaggio.</p>
+                                <p class="mb-8">La storia dell'ometto dai capelli biondi e gli occhi curiosi vi porterà in un viaggio emozionante tra amore e amicizia, ricerca e comprensione. Un’avventura rica di incontri - una volpe, un serpente e tanti adulti bizzarri - passando da piccoli pianeti nascosti tra le stelle a deserti sconfinati, fino al ritorno dalla sua amata rosa, per la quale inizierà e finirà l'intero viaggio.</p>
                             </div>
-                            
-                            <!-- Seconda immagine -->
+
                             <div class="content-section">
-                                <!-- 
-                                Per inserire un'immagine di sfondo:
-                                1. Aggiungi style="background-image: url('TUA_IMMAGINE.jpg');" 
-                                -->
                                 <div class="image-container bg-[var(--green-color)] mb-8" style="background-image: url('./img/storia/Antoine de Saint-Exupéry.jpg'); background-position: 50% 15%">
-                                    <!-- L'immagine sarà lo sfondo di questo div -->
-                                </div>
+                                    </div>
                             </div>
-                            
-                            <!-- Terza parte della storia -->
+
                             <div class="content-section">
                                 <h3 class="text-5xl font-bold mb-6" style="color: var(--accent-color)">L'Autore</h3>
                                 <p class="mb-8">Antoine de Saint-Exupéry nasce nel 1900 da una famiglia di nobili decaduti. Giovanissimo perde il padre, l'amata madre crescerà lui, il fratello e le 2 sorelle da sola, con l'aiuto di alcuni zii.</p>
@@ -929,118 +1049,85 @@
                                 <p class="mb-8"><i>Mi scuso con i bambini per avere dedicato questo libro a una persona adulta. Ho una buona scusa: questo adulto è il miglior amico che ho al mondo. Ho un'altra scusa: questo adulto può comprendere tutto, persino i libri per bambini. Ho una terza scusa: questo adulto abita in Francia dove patisce fame e freddo. Ha davvero bisogno di essere consolato. Se tutte queste scuse non bastassero, allora voglio dedicare questo libro al bambino che questo adulto è stato tempo fa. Tutti gli adulti prima di diventare adulti sono stati bambini. (Ma pochi di loro se ne ricordano.) Pertanto correggo la mia dedica:</i></p>
                                 <p class="mb-8"><i>A Léon Werth<br>quando era un bambino"</i></p>
                             </div>
-                            
-                            <!-- Terza immagine -->
+
                             <div class="content-section">
-                                <!-- 
-                                Per inserire un'immagine di sfondo:
-                                1. Aggiungi style="background-image: url('TUA_IMMAGINE.jpg');" 
-                                -->
                                 <div class="image-container bg-[var(--accent-color)] mb-8" style="background-image: url('./img/storia/piccoloprincipemusical10.jpg');">
-                                    <!-- L'immagine sarà lo sfondo di questo div -->
-                                </div>
+                                    </div>
                             </div>
                     </div>
                 </section>
-                
+
                 ${getFooter()}
             `;
         }
-        
+
         // ===================================
         // PAGINA IL MUSICAL
         // ===================================
         function getMusicalPage() {
             return `
                 ${getHeader()}
-                
+
                 <section class="py-20 bg-white">
                     <div class="container mx-auto px-4">
                         <h1 class="text-7xl font-bold mb-16 text-center" style="color: var(--green-color)">Il Musical</h1>
                         <div class="max-w-5xl mx-auto">
-                            <!-- Prima immagine -->
                             <div class="content-section">
-                                <!-- 
-                                Per inserire un'immagine di sfondo:
-                                1. Aggiungi style="background-image: url('TUA_IMMAGINE.jpg');" 
-                                -->
                                 <div class="image-container bg-[var(--primary-color)] mb-8" style="background-image: url('./img/musical/piccoloprincipemusical7.jpg');">
-                                    <!-- L'immagine sarà lo sfondo di questo div -->
-                                </div>
+                                    </div>
                             </div>
-                            
-                            <!-- La Produzione -->
+
                             <div class="content-section">
                                 <p class="mb-8">Tutte le musiche sono state composte da Damiano Fabbri, che ha anche adattato il testo. Il progetto nasce nel 2019 come tesi di laurea, con l’obiettivo di creare un connubio tra musica e narrativa per ragazzi. Sullo spunto di opere simili come Pierino e il Lupo di Prokofiev, nasce questo racconto musicale, dove a ogni personaggio è associato un tema (leitmotiv). Poi la partitura è stata completata e rivista più volte, aggiungendo scene, canzoni e musiche, fino a rendere il progetto un vero spettacolo teatrale. Lo stile si rifà alla scuola del musical americano, unendo l’impronta musicale Disney degli anni 80’ e 90’, rappresentata da Alan Menken.</p>
                                 <p class="mb-8">La storia si sviluppa negli anni ‘40 del novecento e ogni riferimento storico e culturale si attiene al periodo. In particolare, le cartoline che compaiono durante la canzone dell’aviatore “Un sogno nato nel blu” riportano le bandiere e i monumenti storici come erano all’epoca; per esempio, nella cartolina dall’Australia non è presente il teatro dell'Opera di Sydney, celebre monumento, ma iniziato a costruire nel 1959.</p>
                             </div>
-                            
-                            <!-- Seconda immagine -->
+
                             <div class="content-section">
-                                <!-- 
-                                Per inserire un'immagine di sfondo:
-                                1. Aggiungi style="background-image: url('TUA_IMMAGINE.jpg');" 
-                                -->
                                 <div class="image-container bg-[var(--secondary-color)] mb-8" style="background-image: url('./img/musical/piccoloprincipemusical8.jpg');">
-                                    <!-- L'immagine sarà lo sfondo di questo div -->
-                                </div>
+                                    </div>
                             </div>
-                            
-                            <!-- La Musica -->
+
                             <div class="content-section">
                                 <p class="mb-8">Quando il Piccolo Principe arriva nel giardino di rose, prima che capisca di quali fiori si tratti, questi sono illuminati in modo che appaiano neri al pubblico. Solo quando il ragazzo li riconosce si colorano di rosso. L’effetto è possibile perché i petali rossi illuminati di pura luce verde non hanno luce rossa da riflettere verso gli spettatori, che poi invece è presente quando si aggiunge la luce bianca.</p>
                                 <p class="mb-8">Per la realizzazione degli sfondi ambientati nel deserto sono state utilizzate, come punti di riferimento, scene tratte dai film <i>“Spirit- Cavallo selvaggio”</i>, <i>“Star Wars - La minaccia fantasma”</i> e <i>“MadMax: Fury Road”</i>.</p>
                                 <p class="mb-8">L’aereo presente sul palco, in realtà, non vola. Al contrario, il pianoforte suona davvero, sempre dal vivo.</p>
                             </div>
-                            
-                            <!-- Terza immagine -->
+
                             <div class="content-section">
-                                <!-- 
-                                Per inserire un'immagine di sfondo:
-                                1. Aggiungi style="background-image: url('TUA_IMMAGINE.jpg');" 
-                                -->
                                 <div class="image-container bg-[var(--green-color)] mb-8" style="background-image: url('./img/musical/piccoloprincipemusical_piano.jpg'); background-position: center">
-                                    <!-- L'immagine sarà lo sfondo di questo div -->
-                                </div>
+                                    </div>
                             </div>
                         </div>
                     </div>
                 </section>
-                
+
                 ${getFooter()}
             `;
         }
-        
+
         // ===================================
         // PAGINA IL CAST
         // ===================================
         function getCastPage() {
             return `
                 ${getHeader()}
-                
+
                 <section class="py-20 bg-white">
                     <div class="container mx-auto px-4">
                         <h1 class="text-7xl font-bold mb-16 text-center" style="color: var(--dark-accent)">Il Cast</h1>
-                            <!-- Immagine del cast completo -->
                             <div class="content-section">
-                                <!-- 
-                                Per inserire un'immagine di sfondo:
-                                1. Aggiungi style="background-image: url('TUA_IMMAGINE.jpg');" 
-                                -->
                                 <div class="image-container bg-[var(--primary-color)] mb-8" style="background-image: url('./img/cast/piccoloprincipemusical_cast2.jpg'); background-position: center">
-                                    <!-- L'immagine sarà lo sfondo di questo div -->
-                                </div>
+                                    </div>
                             </div>
-                            
-                            <!-- In Scena -->
+
                             <div class="content-section">
                                 <h3 class="text-5xl font-bold mb-6" style="color: var(--accent-color)">In Scena</h3>
                                 <p class="mb-8"><strong>Damiano Fabbri</strong> <br>
                                 Classe 1995, si forma al Conservatorio Rossini di Pesaro, studiando composizione e poi didattica della musica. Dal 2015 fa parte del Coro Polifonico Malatestiano di Fano, ambiente che lo ha fortemente influenzato nel profilo artistico portandolo a diplomarsi in direzione di coro nel 2022 presso l'accademia superiore per direttori di coro della Fondazione Guido d'Arezzo. Attivo nell'insegnamento musicale, ha svolto anche il ruolo di maestro preparatore per voci bianche e maestro alle luci nelle produzioni di Macbeth e Madama Butterfly, prodotte dalla rete lirica delle Marche. Come compositore ha pubblicato con Pizzicato Verlag Helvetia.</p>
-                                
+
                                 <p class="mb-8"><strong>Cecilia Borgogelli</strong><br>
                                 Nata a Fano nel 2000, dopo aver concluso gli studi superiori in agraria decide di cambiare percorso di studi diplomandosi in “Fumetto” presso ACCA ACADEMY a Jesi. Qui ha modo di studiare inoltre illustrazione fiction, non fiction e cover. Da ottobre 2024 fa parte di un collettivo di fumettisti e illustratori chiamato “MazzamurelliComics”.</p>
-                                
+
                                 <p class="mb-8"><strong>Riccardo Maria Ricci</strong><br>
                                 Classe 1998, si forma presso il "Conservatorio Rossini” di Pesaro, la “Scuola di Musica di Fiesole” e il “Conservatorio Cherubini” di Firenze laureandosi in Pianoforte e Maestro Collaboratore. In qualità di Maestro Collaboratore prende parte a diverse produzioni operistiche presso il “Teatro Carlo Felice” di Genova, il “Royal Opera House” di Muscat, il “Cantiere Internazionale d’Arte” di Montepulciano, il “Teatro Goldoni” di Firenze e il “Teatro Pergolesi” di Jesi. Lavora inoltre come pianista accompagnatore presso la “Scuola di Musica di Fiesole”.</p>
 
@@ -1053,19 +1140,12 @@
                                 <p class="mb-8"><strong>Tommaso Ruscitti</strong><br>
                                 Fano, 1999. Cresce a pane e Laboratorio Linguaggi, che segna la sua passione per il teatro rendendolo una costante della sua vita dai sette anni a oggi. Col tempo incontra decine di registi e registe e fa molte esperienze teatrali: recitazione, musical, improvvisazione, scrittura, regia. In parallelo, si laurea in Fisica all’Università di Ferrara e prosegue con la magistrale in Scienze Fisiche all’Università di Pavia, specializzandosi in didattica, storia della fisica e comunicazione scientifica. Fa attività di divulgazione scientifica con l’INFN, il CNR al Festival delle Scienze di Roma, Sharper per la European Researchers’ Night a Pavia e Fosforo - la festa della scienza. De Il piccolo principe è il regista insieme a T. Rizzitelli e interpreta l’aviatore.</p>
                             </div>
-                            
-                            <!-- Immagine dei protagonisti -->
+
                             <div class="content-section">
-                                <!-- 
-                                Per inserire un'immagine di sfondo:
-                                1. Aggiungi style="background-image: url('TUA_IMMAGINE.jpg');" 
-                                -->
                                 <div class="image-container bg-[var(--secondary-color)] mb-8" style="background-image: url('./img/cast/piccoloprincipemusical_cast3.jpg'); background-position: center">
-                                    <!-- L'immagine sarà lo sfondo di questo div -->
-                                </div>
+                                    </div>
                             </div>
-                            
-                            <!-- Dietro le Quinte -->
+
                             <div class="content-section">
                                 <h3 class="text-5xl font-bold mb-6" style="color: var(--accent-color)">Dietro le Quinte</h3>
                                 <p class="mb-8">Coro Giovanile Malatestiano diretto dal M°Francesco Santini<br>
@@ -1079,40 +1159,38 @@
                                 Giovanni Gasperi (supporto tecnico)
                                 </p>
                             </div>
-                            
-                            <!-- Immagine dei personaggi dei pianeti -->
+
                             <div class="content-section">
-                                <!-- 
-                                Per inserire un'immagine di sfondo:
-                                1. Aggiungi style="background-image: url('TUA_IMMAGINE.jpg');" 
-                                -->
                                 <div class="image-container bg-[var(--green-color)] mb-8" style="background-image: url('./img/cast/piccoloprincipemusical_cast1.jpg'); background-position: center">
-                                    <!-- L'immagine sarà lo sfondo di questo div -->
-                                </div>
+                                    </div>
                             </div>
                         </div>
                     </div>
                 </section>
-                
+
                 ${getFooter()}
             `;
         }
-        
+
         // ===================================
         // FUNZIONE PER LO SLIDESHOW
         // ===================================
         function startSlideshow() {
             let slides = document.querySelectorAll('.slide');
             let currentSlide = 0;
-            
+
             // Mostra la prima slide
-            slides[0].classList.add('active');
-            
+            if (slides.length > 0) { // Aggiungi controllo per evitare errori se non ci sono slide
+                slides[0].classList.add('active');
+            }
+
             // Cambia slide ogni 4 secondi
             setInterval(() => {
-                slides[currentSlide].classList.remove('active');
-                currentSlide = (currentSlide + 1) % slides.length;
-                slides[currentSlide].classList.add('active');
+                if (slides.length > 0) {
+                    slides[currentSlide].classList.remove('active');
+                    currentSlide = (currentSlide + 1) % slides.length;
+                    slides[currentSlide].classList.add('active');
+                }
             }, 4000);
         }
     </script>
