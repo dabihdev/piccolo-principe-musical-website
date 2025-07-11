@@ -717,20 +717,17 @@
                     e.preventDefault();
                     const page = e.target.getAttribute('data-page');
                     const href = e.target.getAttribute('href');
-
-                    if (href && href.startsWith('#')) {
-                        // Se è un link ad un'ancora (es. #footer), scorri alla sezione
+                    
+                    if (href && href=="#footer") {
                         const targetElement = document.querySelector(href);
                         if (targetElement) {
                             targetElement.scrollIntoView({ behavior: 'smooth' });
-                            // Chiudi il menu mobile se è aperto
                             const mobileMenu = document.querySelector('.mobile-menu');
                             if (mobileMenu && mobileMenu.classList.contains('active')) {
                                 mobileMenu.classList.remove('active');
                             }
                         }
                     } else {
-                        // Altrimenti, carica la pagina normalmente
                         loadPage(page);
                     }
                 }
