@@ -716,7 +716,23 @@
                 if (e.target.classList.contains('nav-link')) {
                     e.preventDefault();
                     const page = e.target.getAttribute('data-page');
-                    loadPage(page);
+                    const href = e.target.getAttribute('href');
+
+                    if (href && href.startsWith('#')) {
+                        // Se è un link ad un'ancora (es. #footer), scorri alla sezione
+                        const targetElement = document.querySelector(href);
+                        if (targetElement) {
+                            targetElement.scrollIntoView({ behavior: 'smooth' });
+                            // Chiudi il menu mobile se è aperto
+                            const mobileMenu = document.querySelector('.mobile-menu');
+                            if (mobileMenu && mobileMenu.classList.contains('active')) {
+                                mobileMenu.classList.remove('active');
+                            }
+                        }
+                    } else {
+                        // Altrimenti, carica la pagina normalmente
+                        loadPage(page);
+                    }
                 }
 
                 // Gestione del logo (torna alla home)
@@ -740,7 +756,7 @@
             // Event listener per il pulsante "Impostazioni Cookie"
             openCookieSettingsBtn.addEventListener('click', () => {
                 showCookieBanner();
-                setCookie('cookieConsent', '', -1); // Elimina il cookie per riaprire il banner
+                setCookie('cookieConsent', '', -1); // Elimina il cookie per riopenire il banner
             });
         });
 
@@ -757,7 +773,8 @@
 
             // Aggiorna la classe attiva nei link di navigazione
             document.querySelectorAll('.nav-link').forEach(link => {
-                if (link.getAttribute('data-page') === page) {
+                const linkPage = link.getAttribute('data-page');
+                if (linkPage && linkPage === page) {
                     link.classList.add('active-nav');
                 } else {
                     link.classList.remove('active-nav');
@@ -839,6 +856,7 @@
                                 <a href="#" class="nav-link ${currentPage === 'storia' ? 'active-nav' : ''}" data-page="storia">La Storia</a>
                                 <a href="#" class="nav-link ${currentPage === 'musical' ? 'active-nav' : ''}" data-page="musical">Il Musical</a>
                                 <a href="#" class="nav-link ${currentPage === 'cast' ? 'active-nav' : ''}" data-page="cast">Il Cast</a>
+                                <a href="#footer" class="nav-link" data-page="contatti">Contatti</a>
                                 <a href="https://www.liveticket.it/evento.aspx?Id=597581&InstantBuy=1" target="_blank" class="btn-primary px-5 py-2 rounded-md">Biglietti</a>
                             </nav>
 
@@ -857,6 +875,7 @@
                     <a href="#" class="text-white text-4xl nav-link" data-page="storia">La Storia</a>
                     <a href="#" class="text-white text-4xl nav-link" data-page="musical">Il Musical</a>
                     <a href="#" class="text-white text-4xl nav-link" data-page="cast">Il Cast</a>
+                    <a href="#footer" class="text-white text-4xl nav-link" data-page="contatti">Contatti</a>
                     <a href="https://www.liveticket.it/evento.aspx?Id=597581&InstantBuy=1" target="_blank" class="btn-primary px-6 py-3 rounded-md text-3xl">Biglietti</a>
                 </div>
 
@@ -869,7 +888,7 @@
         // ===================================
         function getFooter() {
             return `
-                <footer class="py-16">
+                <footer id="footer" class="py-16">
                     <div class="container mx-auto px-4">
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
                             <div>
@@ -1031,7 +1050,7 @@
 
                             <div class="content-section">
                                 <p class="mb-8">Il Piccolo Principe è una storia senza tempo, nata dalla penna di Antoine de Saint-Exupéry nel 1943.Il suo linguaggio semplice ed etereo la rende una favola moderna, ricca di significati profondi che analizzano l'interiorità dell'essere umano, mettendo in risalto le contraddizioni degli adulti di fronte alla logica pura ed essenziale dell'infanzia.</p>
-                                <p class="mb-8">Proprio l'essenziale è uno dei termini cardine dell'intera opera e la citazione “l'essenziale è invisibile agli occhi” è diventata una delle frasi più diffuse e apprezzate della letteratura. Lo stesso autore nel corso della sua vita ha lamentato più volte la mancanza di minimalismo nelle relazioni tra adulti, accusandoli di un’eccessiva ricerca del di più; egli infatti ha scritto: “a volte è sufficiente un sorso d’acqua per trovare quello che cerchiamo”.</p>
+                                <p class="mb-8">Proprio l'essenziale è uno dei termini cardine dell’intera opera e la citazione “l'essenziale è invisibile agli occhi” è diventata una delle frasi più diffuse e apprezzate della letteratura. Lo stesso autore nel corso della sua vita ha lamentato più volte la mancanza di minimalismo nelle relazioni tra adulti, accusandoli di un’eccessiva ricerca del di più; egli infatti ha scritto: “a volte è sufficiente un sorso d’acqua per trovare quello che cerchiamo”.</p>
                                 <p class="mb-8">Il libro è dedicato all'amico Léon Werth, a quando anche lui era ancora un bambino.</p>
                                 <p class="mb-8">La storia dell'ometto dai capelli biondi e gli occhi curiosi vi porterà in un viaggio emozionante tra amore e amicizia, ricerca e comprensione. Un’avventura rica di incontri - una volpe, un serpente e tanti adulti bizzarri - passando da piccoli pianeti nascosti tra le stelle a deserti sconfinati, fino al ritorno dalla sua amata rosa, per la quale inizierà e finirà l'intero viaggio.</p>
                             </div>
